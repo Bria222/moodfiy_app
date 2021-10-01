@@ -1,0 +1,29 @@
+
+<link rel='stylesheet' href='css/app.css'>
+{{#partial "content"}}
+    <h2 class="text-center"style="color:#fff;"><u><b>{{location}}</b></u></h2>
+    <h4 class="text-center"style="color:#fff;">Moods based on popularity</h4>
+    <table class="table text-center"  style="opacity:0.1">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">User</th>
+            <th scope="col">Mood</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {{#each sightings}}
+            <tr>
+                <td><a href="/users/{{userid}}/details">{{userName}}</a></td>
+                <td>{{moodName}}</td>
+
+
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+{{/partial}}
+
+{{> layout.hbs}}

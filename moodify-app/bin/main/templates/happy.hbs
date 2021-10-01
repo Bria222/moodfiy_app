@@ -1,0 +1,32 @@
+<link rel='stylesheet' href='css/app.css'>
+{{#partial "content"}}
+    {{#if happy}}
+<div>Feeling Happy?Share your joy with others!</div>
+          {{#each happy}}
+
+          <div class="card" style="width: 18rem; float:left; padding:2%; margin:2%;">
+          <ul class="list-group list-group-flush">
+                               <li class="list-group-item"><img class="card-img-top" src="/images/newbg.jpg" alt="Card image cap"></li>
+                              <li class="list-group-item">App Name:{{appname}}</li>
+                              <li class="list-group-item">Details:{{appinfo}}</li>
+                              <li class="list-group-item">Downloads:{{downloads}}</li>
+                              <li class="list-group-item">Rating:{{rating}}</li>
+                              <li class="list-group-item">Popularity:{{popularity}}</li>
+
+
+                            </ul>
+           <div class="card-body">
+                      <a href="#" class="https://play.google.com/store/apps">Download link</a>
+                      <br>
+                      <a href="#" class="https://play.google.com/store/apps">Official Website link</a>
+                    </div>
+                  </div>
+          {{/each}}
+
+    {{else}}
+        <h5 class="text-center">No data to display .</h5>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}

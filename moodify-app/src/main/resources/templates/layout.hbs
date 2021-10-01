@@ -1,0 +1,59 @@
+{{#block "header"}}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{{#block "title"}}MOOFIFY{{/block}}</title>
+        <link href="https://fonts.googleapis.com/css?family=Mukta|Nunito|Poppins:500&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel='stylesheet' href='css/app.css'>
+    </head>
+    <body  style=" background-image:url(/images/newbg.jpg); height: 250vh;background-repeat: no-repeat;background-size: cover;background-position: center;">
+
+{{/block}}
+    <ul class="nav nav-tabs" STYLE="padding:1%; color:white;">
+       <li role="presentation" class="dropdown" style="padding:2% ">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Find apps by mood <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" style="padding:2%; color:black">
+                <li><a href="/mood/sad">Sad</a></li>
+
+                <li><a href="/mood/happy">Happy</a></li>
+            </ul>
+        </li>
+
+        <li role="presentation" class="dropdown" style="padding:2%;color:white">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               Admin Operations <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+            <li><a href="/">Admin data</a></li>
+            <li><a href="/admin/new">Add moods</a></li>
+            <li><a href="/users">All users</a></li>
+            <li><a href="/admins">LOCATIONS</a></li>
+            <li><a href="/login">Login</a></li>
+
+            </ul>
+        </li>
+    </ul>
+    <!--begin main template-->
+    <div class="page-header">
+        <h1>Moodify your life. </h1>
+    </div>
+
+    <div class="col-md-12">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+{{/block}}
+
+

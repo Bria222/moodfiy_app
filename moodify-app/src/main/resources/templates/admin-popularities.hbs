@@ -1,0 +1,16 @@
+<link rel='stylesheet' href='css/app.css'>
+{{#partial "content"}}
+    {{#if sightings}}
+        <h2 class="text-center"style="color: black;font-size: xx-large;font-weight: 600;">All Popularities</h2>
+        <ul class="list-group" style=" background-color:transparent;">
+        {{#each admins}}
+            <li class="list-group-item" style="background-color:transparent; opacity:0.1"><a href="/admins/{{popularity}}/details">{{popularity}}</a></li>
+        {{/each}}
+        </ul>
+    {{else}}
+        <h5 class="text-center">No data to display</h5>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}

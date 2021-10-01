@@ -1,0 +1,111 @@
+<link rel='stylesheet' href='css/app.css'>
+{{#partial "content"}}
+    <h3 class="text-center"style="color:black;font-size: xx-large;font-weight: 600 opacity:0.1;">Add a new app based on a mood!</h3>
+    {{#if specificUser}}
+        <form action="/users/{{specificUser.id}}/admin/new" method="post" style="color:black;">
+            <div class="form-group" style="width:40vw; margin-left:80px; color:white;">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" class="form-control" value="{{specificUser.name}}" disabled>
+            </div>
+    {{else}}
+        <form action="/admin/new" method="post">
+            <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" class="form-control" required>
+            </div>
+    {{/if}}
+        <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+            <label for="moodname">Specific feeling</label>
+            {{#if sightings}}
+                <input type="text" id="moodname" name="moodname" class="form-control" list="prevAnimals" required>
+                <datalist id="prevMoods">
+                    {{#each admins}}
+                    <option value={{moodname}}>
+                    {{/each}}
+                </datalist>
+            {{else}}
+                <input type="text" id="moodname" name="moodname" class="form-control" required>
+            {{/if}}
+        </div>
+        <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+            <label for="moodtype">Mood Type</label>
+            <select name="moodtype" id="moodtype" class="form-control" required>
+                <option value="sad">Sad</option>
+                <option value="happy">Happy</option>
+            </select>
+        </div>
+        <div class="form-group" style="width:40vw; margin-left:80px; color:white;">
+            <label for="appname">App Name</label>
+            <select name="appname" id="appname" class="form-control" required>
+                <option value="Instagram">Instagram</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Whatsapp">Whatsapp</option>
+                <option value="Jumia">Jumia</option>
+                <option value="KCB Bank">KCB</option>
+                 <option value="Mpesa">MPESA</option>
+                 <option value="Netflix">Netflix</option>
+                 <option value="Opera News">pera News</option>
+                 <option value="Pinterest">Pinterest</option>
+                  <option value="Slack">Slack</option>
+                  <option value="Tiktok">Tiktok</option>
+                  <option value="Weather">Weather</option>
+            </select>
+        </div>
+        <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+            <label for="appinfo">App info</label>
+            <select name="appinfo" id="appinfo" class="form-control" required>
+                <option value="Video app">Video app</option>
+                <option value="To do app">To do app</option>
+                <option value="Reels app">Reels app</option>
+                <option value="Conversational app">Conversational app</option>
+                <option value="Gaming app">Gaming app</option>
+                <option value="Meditation app">Meditation app</option>
+                <option value="Movie app">Movie app</option>
+                 <option value="Music app">Music app</option>
+                <option value="Fitness app">Fitness app</option>
+                <option value="Banking app">Banking app</option>
+                <option value="Photo app">Photo app</option>
+                 <option value="Shopping app">Shopping app</option>
+            </select>
+        </div>
+         <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+                    <label for="downloads">Downloads</label>
+                    <select name="downloads" id="downloads" class="form-control" required>
+                        <option value="Zero">Zero</option>
+                        <option value="Average">Average</option>
+                        <option value="Millions">Millions</option>
+                    </select>
+                </div>
+                <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+                                    <label for="rating">Rating</label>
+                                    <select name="rating" id="rating" class="form-control" required>
+                                        <option value="Boring">Boring</option>
+                                        <option value="Fun">Fun</option>
+                                        <option value="Average">Average</option>
+                                    </select>
+                                </div>
+        <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+            <label for="popularity">Popularity</label>
+            {{#if admins}}
+                <input type="text" id="popularity" name="popularity" class="form-control" list="prevLocations" required>
+                <datalist id="prevPopularities">
+                    {{#each admins}}
+                        <option value={{popularity}}>
+                    {{/each}}
+                </datalist>
+            {{else}}
+                <input type="text" id="popularity" name="popularity" class="form-control" required>
+            {{/if}}
+        </div>
+        <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+                <label for="appimage">Add image</label>
+               <input type="file" id="appimage" name="appimage" accept="image/*">
+         </div>
+
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+
+{{/partial}}
+
+{{> layout.hbs}}

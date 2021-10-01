@@ -1,0 +1,28 @@
+<link rel='stylesheet' href='css/app.css'>
+{{#partial "content"}}
+    {{#if sightings}}
+        <h4 class="text-center" style=" color: #fff;font-size: xx-large;font-weight: 500;">SIGHTING DETAILS</h4>
+        <table class="table text-center" >
+            <thead style="background-color:#fff; color:black;">
+            <tr>
+                <th scope="col"  >User</th>
+                <th scope="col" >Mood</th>
+                <th scope="col"  >Popularity</th>
+            </tr>
+            </thead>
+            <tbody style="color:#fff;">
+            {{#each sightings}}
+                <tr>
+                    <td>{{userName}}</a></td>
+                    <td>{{moodName}}</td>
+                    <td>{{popularity}}</td>
+                 </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <h5 class="text-center">No data to display</h5>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

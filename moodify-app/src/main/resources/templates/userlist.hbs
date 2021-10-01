@@ -1,0 +1,17 @@
+
+{{#partial "content"}}
+    {{#if users}}
+        <h2 class="text-center" style="color: #fff;font-size: xx-large;font-weight: 600;" >All Users</h2>
+        <ul class="list-group" style="opacity:0.1" >
+
+            {{#each users}}
+                <li class="list-group-item">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <h5 class="text-center">No data to display</h5>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}
